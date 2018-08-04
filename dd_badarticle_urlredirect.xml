@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+    <name>PLG_SYSTEM_DD_BADARTICLE_URLREDIRECT</name>
+    <version>1.0.0.0</version>
+    <creationDate>04.08.2018</creationDate>
+    <author>Ankit Kumar Jagetia, Florian Häusler</author>
+    <authorEmail>info@hr-it-solutions.com</authorEmail>
+    <authorUrl>HR-IT-Solutions GmbH https://www.hr-it-solutions.com</authorUrl>
+    <copyright>Copyright (C) 2018 - 2018 HR-IT-Solutions GmbH</copyright>
+    <license>GNU/GPLv2 only</license>
+    <description>PLG_SYSTEM_DD_BADARTICLE_URLREDIRECT_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="dd_badarticle_urlredirect">dd_badarticle_urlredirect.php</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_dd_badarticle_urlredirect.sys.ini</language>
+    </languages>
+</extension>
