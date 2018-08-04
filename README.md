@@ -19,5 +19,6 @@ It is a namespace prefix, provided to avoid element name conflicts.
 
 <br>
 Author: HR-IT-Solutions GmbH Florian Häusler https://www.hr-it-solution.com                 <br>
+Author: Ankit Kumar Jagetia
 Copyright: (C) 2018 - 2018 HR-IT-Solutions GmbH                                             <br>
 http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
