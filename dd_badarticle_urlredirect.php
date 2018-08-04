@@ -48,7 +48,7 @@ class PlgSystemDD_BadArticle_URLRedirect extends JPlugin
 
 		$currentURL = JUri::getInstance()->getQuery();
 
-		if ((strpos($currentURL, "&") !== false) AND ($option === 'com_content' && $view === 'article'))
+		if (strpos($currentURL, "&") !== false && $option === 'com_content' && $view === 'article')
 		{
 			$url = JRoute::_(ContentHelperRoute::getArticleRoute($id, $catid));
 
