@@ -15,13 +15,30 @@ jimport('joomla.access.access');
 
 JLoader::register('ContentHelperRoute', JPATH_SITE . '/components/com_content/helpers/route.php');
 
+/**
+ * Class PlgSystemDD_BadArticle_URLRedirect
+ */
 class PlgSystemDD_BadArticle_URLRedirect extends JPlugin
 {
 
+	/**
+	 * Application object
+	 *
+	 * @var    JApplicationCms
+	 * @since  3.2
+	 */
+
 	protected $app;
 
-	public function onAfterRoute() {
-
+	/**
+	 * After route.
+	 *
+	 * @return  void
+	 *
+	 * @since   3.4
+	 */
+	public function onAfterRoute()
+	{
 		$input = $this->app->input;
 
 		$option = $input->get('option', '');
@@ -31,8 +48,8 @@ class PlgSystemDD_BadArticle_URLRedirect extends JPlugin
 
 		$currentURL = JUri::getInstance()->getQuery();
 
-		if ((strpos($currentURL,"&") !== false) AND ($option === 'com_content' && $view === 'article')){
-
+		if ((strpos($currentURL, "&") !== false) AND ($option === 'com_content' && $view === 'article'))
+		{
 			$url = JRoute::_(ContentHelperRoute::getArticleRoute($id, $catid));
 
 			$this->app->redirect($url);
