@@ -41,10 +41,10 @@ class PlgSystemDD_BadArticle_URLRedirect extends JPlugin
 	{
 		$input = $this->app->input;
 
-		$option = $input->get('option', '');
-		$view   = $input->get('view', '');
-		$id     = $input->get('id', '', 'INT');
-		$catid  = $input->get('catid', 0, 'INT');
+		$option = $input->get('option');
+		$view   = $input->get('view');
+		$id     = $input->getInt('id');
+		$catid  = $input->getInt('catid');
 
 		$currentURL = JUri::getInstance()->getQuery();
 
