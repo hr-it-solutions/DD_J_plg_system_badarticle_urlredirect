@@ -39,20 +39,24 @@ class PlgSystemDD_BadArticle_URLRedirect extends JPlugin
 	 */
 	public function onAfterRoute()
 	{
-		$input = $this->app->input;
-
-		$option = $input->get('option');
-		$view   = $input->get('view');
-		$id     = $input->getInt('id');
-		$catid  = $input->getInt('catid');
-
-		$currentURL = JUri::getInstance()->getQuery();
-
-		if (strpos($currentURL, "&") !== false && $option === 'com_content' && $view === 'article')
+		// Front end
+		if ($this->app instanceof JApplicationSite)
 		{
-			$url = JRoute::_(ContentHelperRoute::getArticleRoute($id, $catid));
+			$input = $this->app->input;
 
-			$this->app->redirect($url);
+			$option = $input->get('option');
+			$view   = $input->get('view');
+			$id     = $input->getInt('id');
+			$catid  = $input->getInt('catid');
+
+			$currentURL = JUri::getInstance()->getQuery();
+
+			if (strpos($currentURL, "&") !== false && $option === 'com_content' && $view === 'article')
+			{
+				$url = JRoute::_(ContentHelperRoute::getArticleRoute($id, $catid));
+
+				$this->app->redirect($url);
+			}
 		}
 	}
 }
