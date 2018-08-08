@@ -40,7 +40,7 @@ class PlgSystemDD_BadArticle_URLRedirect extends JPlugin
 	public function onAfterRoute()
 	{
 		// Front end
-		if ($this->app instanceof JApplicationSite)
+		if ($this->app->isClient('site'))
 		{
 			$input = $this->app->input;
 
