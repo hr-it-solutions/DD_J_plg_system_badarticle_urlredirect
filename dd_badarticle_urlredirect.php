@@ -44,18 +44,28 @@ class PlgSystemDD_BadArticle_URLRedirect extends JPlugin
 		{
 			$input = $this->app->input;
 
-			$option = $input->get('option');
-			$view   = $input->get('view');
-			$id     = $input->getInt('id');
-			$catid  = $input->getInt('catid');
-
+			$option     = $input->get('option');
+			$view       = $input->get('view');
+			$id         = $input->getInt('id');
+			$catid      = $input->getInt('catid');
+			$exclude_id = $this->params->get('exclude_id');
 			$currentURL = JUri::getInstance()->getQuery();
 
-			if (strpos($currentURL, "&") !== false && $option === 'com_content' && $view === 'article')
+			if(strpos($currentURL, "&") !== false && $option === 'com_content' && $view === 'article')
 			{
-				$url = JRoute::_(ContentHelperRoute::getArticleRoute($id, $catid));
+				$exclude_ids = array();
 
-				$this->app->redirect($url);
+				foreach ($exclude_id as $item)
+				{
+					array_push($exclude_ids, $item->exclude_id);
+				}
+
+				if(!in_array($id, $exclude_ids) && (substr( $_SERVER['REQUEST_URI'], 0, 14 ) !== "/?view=article"))
+				{
+					$url = JRoute::_(ContentHelperRoute::getArticleRoute($id, $catid));
+
+					$this->app->redirect($url);
+				}
 			}
 		}
 	}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <field name="exclude_id" type="text" filter="integer" label="PLG_SYSTEM_DD_BADARTICLE_EXCLUDE_ID_LABEL" description="PLG_SYSTEM_DD_BADARTICLE_EXCLUDE_ID_DESC" />
+</form>

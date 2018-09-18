@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.1" type="plugin" group="system" method="upgrade">
     <name>PLG_SYSTEM_DD_BADARTICLE_URLREDIRECT</name>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     <creationDate>04.08.2018</creationDate>
     <author>Ankit Kumar Jagetia, Florian Häusler</author>
     <authorEmail>info@hr-it-solutions.com</authorEmail>
@@ -11,7 +11,17 @@
     <description>PLG_SYSTEM_DD_BADARTICLE_URLREDIRECT_XML_DESCRIPTION</description>
     <files>
         <filename plugin="dd_badarticle_urlredirect">dd_badarticle_urlredirect.php</filename>
+        <folder>fields</folder>
     </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="exclude_id" type="subform"
+                       formsource="plugins/system/dd_badarticle_urlredirect/fields/exclude_id.xml" multiple="true"
+                       label="PLG_SYSTEM_DD_BADARTICLE_EXCLUDE_ID_LABEL" description="PLG_SYSTEM_DD_BADARTICLE_EXCLUDE_ID_DESC" />
+            </fieldset>
+        </fields>
+    </config>
     <languages>
         <language tag="en-GB">language/en-GB/en-GB.plg_system_dd_badarticle_urlredirect.sys.ini</language>
     </languages>
